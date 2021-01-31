@@ -1,0 +1,64 @@
+ html{
+    box-sizing: border-box;
+ }
+ body {
+     margin: 0;
+     padding: 0;
+     background-image: linear-gradient(to left, #242323, #e70a0a);
+     display: flex;
+     justify-content: center;
+     height: 100vh;
+ }
+
+ .container {
+     color: white;
+     display: grid;
+     align-items: center;
+ }
+
+ .calculadora {
+     background: #242323;
+     border-radius: 12px;
+     border: 2px solid rgb(128, 126, 126);
+     display: grid;
+     height: 300px;
+     width: 300px;
+
+ }
+ button {
+     background-color: #1d1d1d;
+     color: white;
+     text-align: center;
+     border-radius: 50%;
+ }
+
+ .display {
+     background-image: linear-gradient(to left,#0c0c0c,#e70a0a);
+     text-align: right;
+     color: white;
+     font-weight: bold;
+     padding: 10px;
+     border-radius: 12px;
+ }
+.sinais{
+    background: #353434;
+}
+ .botoes {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     text-align: center;
+     grid-gap: 1px;
+ }
+
+ .igual {
+     grid-column: -2;
+     grid-row: 2/ span 4;
+     border-radius: 25px;
+     background-image: linear-gradient(to left, #f50e0e, #000);
+ }
+
+ html {
+     font-size: 175%;
+     font-weight: 300;
+     line-height: 1.3;
+ }
