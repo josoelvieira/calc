@@ -4,7 +4,7 @@
  body {
      margin: 0;
      padding: 0;
-     background-image: linear-gradient(to left, #242323, #e70a0a);
+     background: #242323;
      display: flex;
      justify-content: center;
      height: 100vh;
@@ -17,7 +17,6 @@
  }
 
  .calculadora {
-     background: #242323;
      border-radius: 12px;
      border: 2px solid rgb(128, 126, 126);
      display: grid;
@@ -33,12 +32,13 @@
  }
 
  .display {
-     background-image: linear-gradient(to left,#0c0c0c,#e70a0a);
+     background-image: linear-gradient(to left,#e70a0a,#0c0c0c);
      text-align: right;
      color: white;
      font-weight: bold;
      padding: 10px;
      border-radius: 12px;
+     opacity: 70%;
  }
 .sinais{
     background: #353434;
