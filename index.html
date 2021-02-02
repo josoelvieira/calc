@@ -6,30 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Calculadora</title>
+    <script type="text/javascript">
+
+    var displayBuffer = "";
+    var numero = "";
+    var termos = [undefined,undefined,undefined]
+    
+    function pressOperador(op){
+        termos[0] = numero;
+        termos[1] = op.innerHTML;
+        verdisplay(op.innerHTML);
+        numero = "";
+
+    }
+
+    function pressIgual(){
+        termos[2] = numero;
+        
+    }
+
+    function pressNum(num){
+        numero = numero.concat(num.innerHTML);
+        verdisplay(num.innerHTML);
+    }
+
+    function limpa(){
+            numero = "";
+    }
+
+    function limpaDisplay(){
+        displayBuffer = "";
+        var tela = document.getElementById('display');
+        tela.value = displayBuffer;
+    }
+
+    function limpatudo(){
+        limpa();
+        limpaDisplay();
+    }
+
+    function verdisplay(conteudo){
+        displayBuffer = displayBuffer.concat(conteudo);
+        var tela = document.getElementById('display');
+        tela.value = displayBuffer;
+    }
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <div class="calculadora">
-        <div class="display">0</div>
+        <div class="calculadora" id="calculadora">
+        <textarea class="display"name="" id="display" disabled rows="1" ></textarea>
         <div class="botoes">
-            <button class="sinais">+</button>
-            <button class="sinais">-</button>
-            <button class="sinais">/</button>
-            <button class="sinais">*</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>0</button>
-            <button>.</button>
-            <button>C</button>
-            <button class="igual">=</button>
+            <button  onclick="pressOperador(this)"class="sinais">+</button>
+            <button  onclick="pressOperador(this)" class="sinais">-</button>
+            <button  onclick="pressOperador(this)" class="sinais">/</button>
+            <button  onclick="pressOperador(this)"class="sinais">*</button>
+            <button onclick="pressNum(this)">7</button>
+            <button onclick="pressNum(this)">8</button>
+            <button onclick="pressNum(this)">9</button>
+            <button onclick="pressNum(this)">4</button>
+            <button onclick="pressNum(this)">5</button>
+            <button onclick="pressNum(this)">6</button>
+            <button onclick="pressNum(this)">1</button>
+            <button onclick="pressNum(this)">2</button>
+            <button onclick="pressNum(this)">3</button>
+            <button onclick="pressNum(this)">0</button>
+            <button onclick="pressNum(this)">.</button>
+            <button  onclick="limpatudo(this)"class="limpa">C</button>
+            <button  onclick="pressIgual()"class="igual">=</button>
         </div>
     </div>
     </div>
